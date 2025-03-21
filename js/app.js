@@ -1,8 +1,10 @@
-import { getClients } from "./API.js";
+import { deleteClient, getClients } from "./API.js";
 (function () {
   const list = document.querySelector("#listado-clientes");
 
   document.addEventListener("DOMContentLoaded", showClients);
+
+  list.addEventListener('click', confirmDelete)
 
   async function showClients() {
     const clients = await getClients();
@@ -31,4 +33,20 @@ import { getClients } from "./API.js";
       list.append( row );
     });
   }
+
+  function confirmDelete( e ){
+    if( e.target.classList.contains('eliminar') ) {
+      const clientId = e.target.dataset.cliente;
+
+      const confirmar = confirm('Deseas eliminar este registro?')
+
+      if( confirmar ) {
+        deleteClient( clientId )
+      }
+
+    }
+  }
+
+
+  
 })();
