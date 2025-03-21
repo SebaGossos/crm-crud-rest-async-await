@@ -1,0 +1,18 @@
+{
+  "clientes": [
+    {
+      "id": "35c1",
+      "name": "sadf",
+      "email": "facundosanchez66@gmail.com",
+      "phone": "sadf",
+      "enterprise": "sdaf"
+    },
+    {
+      "id": "6c00",
+      "name": "aaa",
+      "email": "facundosanchez66@gmail.com",
+      "phone": "sadf",
+      "enterprise": "aaa"
+    }
+  ]
+}
