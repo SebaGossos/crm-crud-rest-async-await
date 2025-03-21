@@ -17,3 +17,5 @@ export function showAlert(message) {
     }, 3000);
   }
 }
+
+export const isEmpty = (obj) => !Object.values(obj).every((input) => input?.trim() !== "");

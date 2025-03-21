@@ -1,4 +1,4 @@
-import { showAlert } from "./funciones.js";
+import { isEmpty, showAlert } from "./funciones.js";
 import { newClient } from "./API.js";
 (function () {
   const form = document.querySelector("#formulario");
@@ -19,7 +19,6 @@ import { newClient } from "./API.js";
       enterprise,
     };
     
-    // console.log(isEmpty(client))
     if (isEmpty(client)) {
       showAlert("Todos los campos son obligatorios");
       return;
@@ -27,7 +26,5 @@ import { newClient } from "./API.js";
     newClient( client )
   }
   
-  // functions
-  const isEmpty = (obj) => !Object.values(obj).every((input) => input?.trim() !== "");
 
 })();
