@@ -20,20 +20,29 @@ export const getClients = async () => {
     const result = await fetch(url);
     return await result.json();
   } catch (error) {
-    console.log( error )
+    console.log(error);
   }
 };
 
-export const deleteClient = async id => {
+export const deleteClient = async (id) => {
+  const deleteClientUrl = `${url}/${id}`;
 
-  const deleteClientUrl = `${url}/${id}`
-  
   try {
-    await fetch( deleteClientUrl, {
-      method: 'DELETE',
-      
-    } )
+    await fetch(deleteClientUrl, {
+      method: "DELETE",
+    });
   } catch (error) {
-    
+    console.log(error);
   }
-}
+};
+
+export const getClient = async (id) => {
+  const editClientUrl = `${url}/${id}`;
+
+  try {
+    const getClient = await fetch(editClientUrl);
+    return await getClient.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
